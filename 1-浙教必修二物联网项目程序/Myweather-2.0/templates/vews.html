@@ -1,0 +1,21 @@
+<!doctype html>
+<body><meta http-equiv="refresh" content="60">
+
+
+</body>
+<style>
+#center{ MARGIN-RIGHT: auto;MARGIN-LEFT: auto;background:#eff7ff;width:600px;
+    height:500px;vertical-align:left;overflow-y:scroll; overflow-x:scroll}
+</style>
+<title>室内环境监测系统</title>
+<h1 align="center">室内环境监测系统</h1>
+<h2 align="center">当前室内温度：{{temp}} </h2>
+<h2 align="center"><a href="/">刷新</a>历史数据列表：</h2>
+<div id="center" style="border:2px solid #96c2f1;height:300px">
+  温度    记录时间<br>
+  {% for i in data[::-1] %}
+       {{i[2]}}    {{i[3]}} <br>
+  {% endfor %}
+</div>
+<br>
+<div align="center" style="height:100px">提交数据：<a href="/input?id=1&val=255">/input?id=1&val=255</a><br>获取数据：<a href="/get?id=1">/get?id=1</a></div>
